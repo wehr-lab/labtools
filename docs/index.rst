@@ -10,6 +10,8 @@ Welcome to labtools's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   labtools
+
 
 
 Indices and tables
