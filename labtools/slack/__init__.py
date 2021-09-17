@@ -4,24 +4,24 @@ Tools for cleaning and managing slack exports because i will be god damned if we
 Exporting Slack Data
 ---------------------
 
-Following the [slack docs...](https://slack.com/help/articles/201658943-Export-your-workspace-data)
+Following the `slack docs... <https://slack.com/help/articles/201658943-Export-your-workspace-data>`_
 
-* From your desktop, click your workspace name in the top left.
-* Select Settings & administration from the menu, then click Workspace settings.
-* Click Import/Export Data in the top right.
-* Select the Export tab.
-* Below Export date range, open the drop-down menu to select an option.
-* Click Start Export. We'll send you an email once your export file is ready.
-* Open the email and click Visit your workspace's export page.
-* Click Ready for download to access the zip file.
+- From your desktop, click your workspace name in the top left.
+- Select Settings & administration from the menu, then click Workspace settings.
+- Click Import/Export Data in the top right.
+- Select the Export tab.
+- Below Export date range, open the drop-down menu to select an option.
+- Click Start Export. We'll send you an email once your export file is ready.
+- Open the email and click Visit your workspace's export page.
+- Click Ready for download to access the zip file.
 
 Archiving Slack Data
 --------------------
 
 Slack will export a big messy collection of .json files. To make them ready for archive, we
 
-* download all the file attachments with :func:`~.slack.load.download_attachments` , and
-* clean the extraneous information with :func:`~.slack.load.clean_messages`
+- download all the file attachments with :func:`~.slack.load.download_attachments` , and
+- clean the extraneous information with :func:`~.slack.load.clean_messages`
 
 These are both wrapped with :func:`~.slack.load.load_messages` .
 
@@ -46,7 +46,7 @@ get a dataframe of cleaned messages back::
 you can then save the dataframe using normal means like ``df.to_json()`` etc.
 
 The files produced by ``download_attachments`` are by default downloaded to a ``files`` subdirectory beneath the ``base_dir``,
-so make sure you save those too! So then you'll get something like this as your dataframe::
+so make sure you save those too!
 """
 
 from labtools.slack.load import load_messages
