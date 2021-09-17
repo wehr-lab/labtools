@@ -1,4 +1,4 @@
-labtools.slack
+Slack
 ======================
 
 .. automodule:: labtools.slack
