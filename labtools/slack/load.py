@@ -52,7 +52,7 @@ def clean_messages(messages: dict) -> pd.DataFrame:
     return pd.DataFrame(clean_messages)
 
 
-def download_attachments(messages: dict, base_dir: Path, download_subdir: str = 'files') -> dict:
+def download_attachments(messages: dict, base_dir: Path, download_subdir: str = 'files', verbose: bool = True) -> dict:
     """
     Download all linked attachments and save them in `download_subdir` beneath `base_dir`.
 
@@ -60,10 +60,13 @@ def download_attachments(messages: dict, base_dir: Path, download_subdir: str = 
         messages (dict): Dict of (uncleaned) messages from :func:`.load_messages`
         base_dir (:class:`pathlib.Path`): base directory, beneath which to save the files
         download_subdir (str): subdirectory beneath `base_dir` into which the files should be downloaded.
+        verbose (bool): if True, show progress bars and messages
 
     Returns:
         dict: dict like input but with a list of local files
     """
+    if verbose:
+        print('Downloading attachments...')
 
     download_dir = Path(base_dir) / download_subdir
     if not download_dir.exists():
@@ -74,7 +77,10 @@ def download_attachments(messages: dict, base_dir: Path, download_subdir: str = 
     for msgs in messages.values():
         n_messages += len(msgs)
 
-    msg_pbar = tqdm(total=n_messages, position=0)
+    if verbose:
+        msg_pbar = tqdm(total=n_messages, position=0)
+        download_pbar = tqdm(total=0, unit='iB', unit_scale=True, position=1)
+
     for channel, channel_messages in messages.items():
         for i, message in enumerate(channel_messages):
             local_files = []
@@ -91,20 +97,27 @@ def download_attachments(messages: dict, base_dir: Path, download_subdir: str = 
 
                 # download that file as a stream!
                 with requests.get(file['url_private_download'], stream=True) as req:
-                    total_size_in_bytes = int(req.headers.get('content-length', 0))
-                    block_size = 1024  # 1 Kibibyte
-                    download_pbar = tqdm(total=total_size_in_bytes, unit='iB', unit_scale=True, position=1)
+
+                    if verbose:
+                        total_size_in_bytes = int(req.headers.get('content-length', 0))
+                        block_size = 1024  # 1 Kibibyte
+                        download_pbar.reset(total=total_size_in_bytes)
                     with open(file_path, 'wb') as open_file:
                         for data in req.iter_content(block_size):
-                            download_pbar.update(len(data))
+                            if verbose:
+                                download_pbar.update(len(data))
                             open_file.write(data)
-                    download_pbar.close()
+
 
             if len(local_files)>0:
                 messages[channel][i]['local_files'] = local_files
 
-            msg_pbar.update()
-    msg_pbar.close()
+            if verbose:
+                msg_pbar.update()
+
+    if verbose:
+        msg_pbar.close()
+        download_pbar.close()
     return messages
 
 

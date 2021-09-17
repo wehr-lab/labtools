@@ -4,7 +4,8 @@ Tools for cleaning and managing slack exports because i will be god damned if we
 Exporting Slack Data
 ---------------------
 
-Following the `slack docs... <https://slack.com/help/articles/201658943-Export-your-workspace-data>`_
+Following the `slack docs <https://slack.com/help/articles/201658943-Export-your-workspace-data>`_ ...
+
 
 - From your desktop, click your workspace name in the top left.
 - Select Settings & administration from the menu, then click Workspace settings.
@@ -14,6 +15,7 @@ Following the `slack docs... <https://slack.com/help/articles/201658943-Export-y
 - Click Start Export. We'll send you an email once your export file is ready.
 - Open the email and click Visit your workspace's export page.
 - Click Ready for download to access the zip file.
+
 
 Archiving Slack Data
 --------------------
