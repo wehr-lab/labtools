@@ -42,6 +42,7 @@ extensions = [
     'sphinx.ext.todo',        # todo directive
     'sphinx.ext.viewcode',
     'sphinxcontrib.napoleon', # parse google style docstrings
+    "myst_parser"
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -83,6 +84,9 @@ autoclass_content = "both"
 autosummary_generate = True
 
 autodoc_mock_imports = ['pigpio']
+
+# autogenerate anchors for markdown headers
+myst_heading_anchors = 3
 
 
 ######

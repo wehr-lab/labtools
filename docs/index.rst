@@ -8,6 +8,19 @@ Welcome to labtools's documentation!
 
 .. toctree::
    :maxdepth: 2
+   :caption: Projects
+
+   projects/preycapture
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Configs
+
+   configs/bonsai
+   configs/open_ephys
+
+.. toctree::
+   :maxdepth: 2
    :caption: Contents:
 
    slack
