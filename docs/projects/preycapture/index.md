@@ -4,9 +4,9 @@ Documenting the analysis pipeline for prey capture
 
 ## Acquisition Configuration
 
-todo -- link to
+todo -- link to the configs
 
-## Starting point
+## Raw Data Structure
 
 What does the raw data look like just after acquisition?
 
@@ -42,13 +42,13 @@ What does the raw data look like just after acquisition?
 All have two columns, one row for each frame.
 The first is some data, the second an isoformatted timestamp
 
-* `Laser_mouse-{mouse_id}_{timestamp}.csv` - laser on/off (`bool`) for each frame
-* `Sky_mouse-{mouse_id}_{timestamp}.csv` - samples since camera on (unused)
-* `TTL_mouse-{mouse_id}_{timestamp}.csv` - TTL pulse on/off (`bool`) for each frame
+- `Laser_mouse-{mouse_id}_{timestamp}.csv` - laser on/off (`bool`) for each frame
+- `Sky_mouse-{mouse_id}_{timestamp}.csv` - samples since camera on (unused)
+- `TTL_mouse-{mouse_id}_{timestamp}.csv` - TTL pulse on/off (`bool`) for each frame
 
 **Video**
 
-* `Sky_mouse-{mouse_id}_{timestamp}.mp4` - Top-down view of arena
+- `Sky_mouse-{mouse_id}_{timestamp}.mp4` - Top-down view of arena
 
 **Open Ephys**
 
@@ -58,11 +58,12 @@ Within a folder with name `{timestamp}_mouse-{mouse_id}`
 Document which continuous files are which value
 ```
 
-* `.continuous` files - raw timeseries of accelerometers and laser pulses
-* `notebook.mat` - Experimental conditions for each trial
-  * Example notebook file containing nb and stimlog
-  ```
-  nb =
+- `.continuous` files - raw timeseries of accelerometers and laser pulses
+- `stimlog.txt` - .txt (actually .json) version of stimlog within `notebook.mat`
+- `notebook.mat` - Experimental conditions for each trial
+    - Example notebook file containing nb and stimlog
+    ```
+    nb =
 
     struct with fields:
 
@@ -78,11 +79,11 @@ Document which continuous files are which value
               Drugs: 'none'
               notes: [5×10 char]
       Reinforcement: 'none'
-  ```
-  ```
-  >> stimlog(1)
+    ```
+    ```
+    >> stimlog(1)
 
-  ans =
+    ans =
 
     struct with fields:
 
@@ -99,4 +100,13 @@ Document which continuous files are which value
                 LaserWidth: 10
             LaserNumPulses: 4800
                   LaserISI: 10
-  ```
+    ```
+  
+## Analysis 
+
+Analysis Diverges from here! 
+
+* [MATLAB Analysis](analysis/analysis_matlab.md)
+  * Manually segment trials (cricket drop and capture)
+  * 
+* [Python Analysis](analysis/analysis_python.md) - 

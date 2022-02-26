@@ -42,6 +42,7 @@ extensions = [
     'sphinx.ext.todo',        # todo directive
     'sphinx.ext.viewcode',
     'sphinxcontrib.napoleon', # parse google style docstrings
+    'sphinx.ext.graphviz',
     "myst_parser"
 ]
 
@@ -88,6 +89,7 @@ autodoc_mock_imports = ['pigpio']
 # autogenerate anchors for markdown headers
 myst_heading_anchors = 3
 
+graphviz_output_format = "svg"
 
 ######
 # Todo extension
@@ -99,9 +101,9 @@ todo_include_todos = True
 
 intersphinx_mapping = {'python': ('https://docs.python.org/3', None),
                        'numpy': ('https://numpy.readthedocs.io/en/latest/', None),
-                       'pandas': ('http://pandas.pydata.org/pandas-docs/stable/', None)
+                       'pandas': ('http://pandas.pydata.org/pandas-docs/stable/', None),
                        #'scipy': ('https://docs.scipy.org/doc/scipy/reference/', None),
-                       }
+                       'prey_capture_python': ('https://preycap.readthedocs.io/en/latest/', None)}
 
 # -- Options for HTML output -------------------------------------------------
 

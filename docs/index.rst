@@ -10,7 +10,8 @@ Welcome to labtools's documentation!
    :maxdepth: 2
    :caption: Projects
 
-   projects/preycapture
+   projects/preycapture/index
+   projects/preycapture/analysis/index
 
 .. toctree::
    :maxdepth: 2
