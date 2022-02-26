@@ -2,6 +2,11 @@
 
 ```{graphviz}
 digraph {
+  bgcolor="#131416"
+  fontcolor="#ffffffcc"
+  color="#368ce2"
+  node [color="#d0d0d0", fontcolor="#d0d0d0"]
+  edge [color="#ed9d13"]
   
   subgraph cluster_input {
       label = "Input"
