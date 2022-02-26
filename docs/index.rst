@@ -11,7 +11,6 @@ Welcome to labtools's documentation!
    :caption: Projects
 
    projects/preycapture/index
-   projects/preycapture/analysis/index
 
 .. toctree::
    :maxdepth: 2
