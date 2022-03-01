@@ -9,12 +9,12 @@ digraph {
   edge [color="#ed9d13"]
 
   subgraph cluster_input {
-      label = "Input"
+      label = "Video Input"
       oe_data
       raw_video
   }
 
-  subgraph cluster_input {
+  subgraph cluster_preprocessing {
       label = "Preprocessing"
       dlc_python[label="DeepLabCut"]
       ProcessCams
