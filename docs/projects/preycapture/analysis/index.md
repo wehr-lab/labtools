@@ -37,8 +37,8 @@ digraph {
 
   subgraph cluster_matlab {
       label="MATLAB"
-      idk[label="idk???"]
-
+      filter_smooth
+      geometry_calculations
   }
 
       subgraph cluster_kilosort {
@@ -60,12 +60,14 @@ digraph {
   geometries -> preycap_metrics
   geometries -> hmm
 
-  ProcessCams -> idk
-  idk -> geometry_calculations
+  ProcessCams -> filter_smooth
+  filter_smooth -> geometry_calculations
 
   oe_data -> master8TT
   master8TT -> phy
   phy ->ProcessSpikes
+
+  ProcessSpikes -> AssimilateSignals
 }
 ```
 
