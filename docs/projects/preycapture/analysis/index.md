@@ -8,10 +8,14 @@ digraph {
   node [color="#d0d0d0", fontcolor="#d0d0d0"]
   edge [color="#ed9d13"]
 
-  subgraph cluster_input {
+  subgraph cluster_videoinput {
       label = "Video Input"
-      oe_data
       raw_video
+  }
+
+  subgraph cluster_ephys {
+      label = "Ephys Input"
+      oe_data
   }
 
   subgraph cluster_preprocessing {
@@ -37,8 +41,16 @@ digraph {
 
   }
 
+      subgraph cluster_kilosort {
+        label = "Kilosort"
+        master8TT
+        phy
+        ProcessSpikes
+    }
+
   raw_video -> dlc_python
   raw_video -> ProcessCams
+  dlc_python -> ProcessCams
   ProcessCams -> AssimilateSignals
   Segmentation -> AssimilateSegmentation
   AssimilateSignals -> AssimilateSegmentation
@@ -48,8 +60,12 @@ digraph {
   geometries -> preycap_metrics
   geometries -> hmm
 
-  raw_video -> idk
+  ProcessCams -> idk
+  idk -> geometry_calculations
 
+  oe_data -> master8TT
+  master8TT -> phy
+  phy ->ProcessSpikes
 }
 ```
 
