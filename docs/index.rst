@@ -23,7 +23,6 @@ Wehrlab Docs
    :maxdepth: 2
    :caption: Autopilot
 
-   autopilot/index
    autopilot/maintenance
 
 .. toctree::
