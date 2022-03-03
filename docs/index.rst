@@ -21,6 +21,13 @@ Wehrlab Docs
 
 .. toctree::
    :maxdepth: 2
+   :caption: Autopilot
+
+   autopilot/index
+   autopilot/maintenance
+
+.. toctree::
+   :maxdepth: 2
    :caption: Misc
 
    slack
