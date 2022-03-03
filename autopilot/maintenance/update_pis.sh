@@ -16,8 +16,3 @@ echo $(git -C ~/git/autopilot rev-parse --abbrev-ref HEAD)
 sudo raspi-config nonint do_change_timezone US/Pacific
 
 echo "updated timezone"
-
-# on each
-# manual shit
-# - change polarity of LEDs and Pokes to 0
-# - set gpu_mem
