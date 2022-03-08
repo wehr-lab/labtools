@@ -1,12 +1,10 @@
 # MATLAB
 
 ```{todo}
-Document this! 
-
-- where is the code?
-- how does it work?
-- how does it relate to the processing pipeline described in the index?
+- how does this relate to the processing pipeline described in the index?
+- Get an example of `s1` and document it
 ```
+Code from the [wehr-lab/Behavior](https://github.com/wehr-lab/Behavior) repository.
 
 Starting with [CalculateMetricsSky.m](https://github.com/wehr-lab/Behavior/blob/master/CalculateMetricsSky.m) for reference
 
