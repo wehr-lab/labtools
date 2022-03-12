@@ -102,6 +102,7 @@ todo_include_todos = True
 intersphinx_mapping = {'python': ('https://docs.python.org/3', None),
                        'numpy': ('https://numpy.readthedocs.io/en/latest/', None),
                        'pandas': ('http://pandas.pydata.org/pandas-docs/stable/', None),
+                       'autopilot': ('https://docs.auto-pi-lot.com/en/latest/', None),
                        #'scipy': ('https://docs.scipy.org/doc/scipy/reference/', None),
                        'prey_capture_python': ('https://preycap.readthedocs.io/en/latest/', None)}
 

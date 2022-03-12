@@ -30,6 +30,7 @@ Wehrlab Docs
    :caption: Autopilot
 
    autopilot/maintenance
+   autopilot/data
 
 
 .. toctree::
