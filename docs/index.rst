@@ -8,6 +8,12 @@ Wehrlab Docs
 
 .. toctree::
    :maxdepth: 2
+   :caption: LabTools 𝔬𝔣𝔣𝔦𝔠𝔦𝔞𝔩
+
+   api/mesoscope/index
+
+.. toctree::
+   :maxdepth: 2
    :caption: Projects
 
    projects/preycapture/index
@@ -24,6 +30,7 @@ Wehrlab Docs
    :caption: Autopilot
 
    autopilot/maintenance
+
 
 .. toctree::
    :maxdepth: 2
